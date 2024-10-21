@@ -71,3 +71,35 @@ fetch('./config.json').then(res => res.json()).then(data => {
     });
 }
 );
+
+// Get the button
+let backToTopBtn = document.getElementById("backToTopBtn");
+
+// Show the button when the user scrolls down 20px from the top of the document
+window.onscroll = function() {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    backToTopBtn.style.display = "block";  // Show karta h
+  } else {
+    backToTopBtn.style.display = "none";   // Hide 
+  }
+}
+
+// When the user clicks the button, the page scroll to the top 
+backToTopBtn.onclick = function() {
+  scrollToTop();
+};
+
+function scrollToTop() {
+  const scrollStep = window.scrollY / 20;  
+  const scrollAnimation = () => {
+    if (window.scrollY > 0) {
+      window.scrollBy(0, -scrollStep); 
+      requestAnimationFrame(scrollAnimation);  
+    }
+  };
+  requestAnimationFrame(scrollAnimation);
+}
