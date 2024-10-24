@@ -1,10 +1,3 @@
-/* Updated CSS with 'new-' prefix */
-.new-news-container {
-  margin-top: 2rem;
-  gap: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-}
 .new-card {
   max-width: 350px;
   border-radius: 0.5rem;
@@ -12,6 +5,27 @@
   background-color: #fff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   border: 1px solid transparent;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.new-card:active {
+  transform: scale(1.05);
+}
+
+.new-card:hover {
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(90deg, #ff006e, #ffdd00, #00f5d4, #7209b7);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0 0 20px rgba(255, 0, 110, 0.6), 0 0 30px rgba(255, 221, 0, 0.6), 0 0 40px rgba(0, 245, 212, 0.6);
+}
+
+.new-news-container {
+  margin-top: 2rem;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 
 .new-card a {
