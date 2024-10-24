@@ -54,8 +54,10 @@ body {
 }
 
 .hex-container {
+  position:relative;
   width: 100%;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, -0.3)),
     url("./pic/Factory_Shed.jpg");
   background-repeat: no-repeat;
@@ -130,17 +132,22 @@ nav li a:hover::after {
 }
 
 .heading-grid {
-  display: grid;
-  margin-left: -13rem;
-  justify-content: end;
-  width: min-content;
-  grid-gap: 5rem;
+  display: flex;
+  flex-direction: row;
+  margin-left: 32px;
+  /* margin-left: 13rem; */
+  /* justify-content: end; */
+  /* width: min-content; */
 }
 aside {
-  grid-column: 1;
-  align-self: stretch;
   display: flex;
-  justify-content: end;
+  flex-direction: column;
+  justify-content: left;
+  height: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
+  margin-right: 12px;
 }
 .heading-grid h2 {
   font-family: var(--ff-heading);
@@ -151,26 +158,29 @@ aside {
   margin-bottom: 0;
 }
 .slogan {
-  grid-column: 2;
+  /* border: #4967E9; */
+  border-left: #ffffff;
+  border-width: 5px;
 }
 .slogan h2 span {
   font-weight: var(--fw-bold);
 }
-aside p {
+/* aside p {
   position: relative;
   display: flex;
   padding: 20px;
-}
-aside::before {
+} */
+/* aside::before {
   content: "";
   position: absolute;
-  top: 190px;
+  top: 190px; 
   left: 5.2%;
+  left: 0;
   transform: translateX(-50%);
   width: 1px;
-  height: 180%;
+  height: 100%;
   background-color: var(--clr-neutral-100);
-}
+} */
 .slogan button {
   padding: 1.3rem;
   color: var(--clr-neutral-100);
@@ -191,22 +201,52 @@ aside::before {
   background-color: rgba(126, 167, 242, 0.152);
 }
 /* ABOUT US SECTION */
-
-
- .about-us {
+.about-us {
+  /*  */
+  position:relative;
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: 0.3fr 2fr 1fr 1fr;
-  margin: 4rem 10rem 0px 3.5rem;
+  padding-right: 50px;
+  margin-top: 50px;
+  /* margin: 4rem 10rem 0px 3.5rem; */
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+.flex-container h2 {
+  font-weight: 100;
+}
+.flex-container h1 {
+  font-family: var(--ff-heading);
+  font-size: 3rem;
+  font-weight: var(--fw-bold);
+}
+.flex-container button {
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+  width: fit-content;
+  color: var(--clr-secondary-400);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+p.second-para {
+  color: #ffffff75;
+  width: 13rem;
+}
 
 .about-img-container {
-  /* height: 320px; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  height: 320px; /* The height of image */
+  align-items: end;
+  width:fit-content
 }
+
 img.about-us-img {
   /* position: absolute; */
   /* right: 0; */
@@ -215,23 +255,51 @@ img.about-us-img {
   /* clip-path: polygon(0 0, 100% 0%, 100% 100%, 14% 100%, 0 83%); */
 }
 div.custom-aside {
-  grid-column: 1;
-  align-self: stretch;
+  /* grid-column: 1;
+  align-self: stretch; */
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  height: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: 32px;
+  margin-right: 12px;
 }
-.custom-aside::before {
+/* .custom-aside::before {
   content: "";
   position: absolute;
-  top: 40rem;
+  top: 80px; 
   left: 5.2%;
   transform: translateX(-50%);
   width: 1px;
   height: 100%;
   background-color: var(--clr-neutral-100);
-}
+
+} */
+/* .custom-aside p {
+  display: flex;
+  padding-left: 2rem;
+  padding-right: 2rem;
+} */
+
 .container2 {
   background-color: var(--clr-neutral-100);
   color: black;
 }
+
+.container2-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  height: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 2rem;
+  margin-left: 32px;
+  margin-right: 12px;
+}
+
 .grid-items-container2 {
   display: grid;
   grid-template-columns: 0.3fr 3fr 1fr;
@@ -261,13 +329,10 @@ div.custom-aside {
   cursor: pointer;
 }
 .business-segments p {
-  grid-column: 1;
   align-self: stretch;
-  margin-left: 3.4rem;
-  margin-top: 3rem;
   font-weight: var(--fw-semi-bold) S;
-  }
-.business-segments p::before {
+}
+/* .business-segments p::before {
   content: "";
   position: absolute;
   top: 80rem;
@@ -276,7 +341,7 @@ div.custom-aside {
   width: 1px;
   height: 177.5%;
   background-color: var(--clr-secondary-400);
-} 
+} */
 /* SERVICES SECTION */
 .services {
   width: 80%;
