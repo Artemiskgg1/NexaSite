@@ -122,10 +122,17 @@
         </section>
         <form onsubmit="sendEmail(event);">
             <h3>GET IN TOUCH</h3>
-            <input type="text" id="name" placeholder="Your Name" required />
-            <input type="email" id="email" placeholder="E-mail" required />
-            <input type="text" id="phone" placeholder="Phone Number" required />
-            <textarea id="message" rows="4" placeholder="Write Message" required></textarea>
+            <label for="name">Your Name</label>
+<input type="text" id="name" name="name" placeholder="Your Name" required />
+
+<label for="email">Email Address</label>
+<input type="email" id="email" name="email" placeholder="E-mail" required />
+
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone" placeholder="Phone Number" required />
+
+<label for="message">Your Message</label>
+<textarea id="message" name="message" rows="4" placeholder="Write Message" required></textarea>
             <button type="submit">Send</button>
         </form>
     </div>
@@ -134,7 +141,6 @@
     <button id="backToTopBtn" title="Go to top">
         <span class="material-symbols-outlined">keyboard_arrow_up</span>
         </button>
-      <script src="script.js"></script>
 
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="../script.js"></script>
